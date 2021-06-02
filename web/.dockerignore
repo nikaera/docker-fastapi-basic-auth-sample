@@ -1,0 +1,6 @@
+# https://github.com/nginx-boilerplate/nginx-boilerplate/blob/master/.dockerignore
+*.md
+.*
+docker-compose.*
+Dockerfile
+logs

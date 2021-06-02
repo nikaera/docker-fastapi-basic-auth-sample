@@ -1,0 +1,21 @@
+version: "3"
+services:
+  web:
+    build: ./web
+    image: apply-basic-auth-web
+    container_name: apply-basic-auth-web
+    links:
+      - app
+    ports:
+      - "80:80"
+    volumes:
+      - ./web/conf.d:/etc/nginx/conf.d
+    environment:
+      USER: original_username
+      PASS: original_password
+  app:
+    build: ./app
+    image: apply-basic-auth-app
+    container_name: apply-basic-auth-app
+    ports:
+      - 80
